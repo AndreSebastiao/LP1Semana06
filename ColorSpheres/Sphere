@@ -15,4 +15,17 @@ namespace ColorSpheres
         radius = r;
         nTimesThrown = 0;
     }
+
+    public void Pop()
+    {
+        radius = 0;
+    }
+
+    public void Throw()
+    {
+        if (radius > 0)
+        {
+            nTimesThrown += 1;
+        }
+    }
 }
