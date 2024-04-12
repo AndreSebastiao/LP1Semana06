@@ -9,20 +9,45 @@ namespace ColorSpheres
     {
         private byte red, green, blue, alpha;
 
-        private Color(byte red, byte green, byte blue, byte alpha)
+        public Color(byte red, byte green, byte blue, byte alpha)
         {
-            red = SetRed(r);
-            green = SetGreen(g);
-            blue = SetBlue(b);
-            alpha = SetAlpha(alpha);
+            red = GetRed();
+            green = GetGreen();
+            blue = GetBlue();
+            alpha = GetAlpha();
         }
 
-        private Color(byte red, byte green, byte blue)
+        public Color(byte red, byte green, byte blue)
         {
-            red = SetRed(r);
-            green = SetGreen(g);
-            blue = SetBlue(b);
+            red = GetRed();
+            green = GetGreen();
+            blue = GetBlue();
             alpha = 255;
+        }
+
+        private byte GetRed()
+        {
+            return red;
+        }
+
+        private byte GetGreen()
+        {
+            return green;
+        }
+
+        private byte GetBlue()
+        {
+            return blue;
+        }
+
+        private byte GetAlpha()
+        {
+            return alpha;
+        }
+
+        private byte GetGrey()
+        {
+            return (byte)((red + green + blue) / 3);
         }
     }
 }
