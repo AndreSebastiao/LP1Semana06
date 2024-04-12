@@ -5,27 +5,35 @@ using System.Threading.Tasks;
 
 namespace ColorSpheres
 {
-    private Color color;
-    private float radius;
-    private interface nTimesThrown;
+    public class Sphere
+    {    
+        private Color color;
+        private float radius;
+        private int nTimesThrown;
 
-    public Sphere(ColorSpheres c, float r)
-    {
-        color = c;
-        radius = r;
-        nTimesThrown = 0;
-    }
-
-    public void Pop()
-    {
-        radius = 0;
-    }
-
-    public void Throw()
-    {
-        if (radius > 0)
+        public Sphere(Color c, float r)
         {
-            nTimesThrown += 1;
+            color = c;
+            radius = r;
+            nTimesThrown = 0;
+        }
+
+        public void Pop()
+        {
+            radius = 0;
+        }
+
+        public void Throw()
+        {
+            if (radius > 0)
+            {
+                nTimesThrown += 1;
+            }
+        }
+
+        public int GetTimesThrown()
+        {
+            return nTimesThrown;
         }
     }
 }
